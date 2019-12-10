@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProgramacionWeb_ExamenFinal.Models.Visit>
+
+@{
+    ViewBag.Title = "Visitas";
+    Layout = "~/Views/Shared/_Layout_navbar.cshtml";
+}
+
+<div class="mybody-content">
+
+    <h2>Visitas</h2>
+
+    <p>
+        @Html.ActionLink("Crear Nueva Visita", "Create")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.entranceTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.departureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fullname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact.name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.entranceTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.departureTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact.name)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.idVisit }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.idVisit }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.idVisit })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

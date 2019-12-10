@@ -1,0 +1,45 @@
+﻿@model ProgramacionWeb_ExamenFinal.Models.Contact
+
+@{
+    ViewBag.Title = "Eliminar Contacto";
+    Layout = "~/Views/Shared/_Layout_navbar.cshtml";
+}
+
+<div class="mybody-content">
+
+    <h2>Eliminar Contacto</h2>
+
+    <h3>Esta seguro que quiere eliminar este contacto?</h3>
+    <div>
+        <h4>Contacto</h4>
+        <hr />
+
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.name)</th>
+                <td>@Html.DisplayFor(model => model.name)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.lastname)</th>
+                <td> @Html.DisplayFor(model => model.lastname)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.idCard)</th>
+                <td>@Html.DisplayFor(model => model.idCard)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.creationDate)</th>
+                <td>@Html.DisplayFor(model => model.creationDate)</td>
+            </tr>
+        </table>
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div>
+                <input type="submit" value="Eliminar Contacto" class="btn btn-default" /> |
+                @Html.ActionLink("Volver a Contactos", "Index")
+            </div>
+        }
+    </div>
+</div>

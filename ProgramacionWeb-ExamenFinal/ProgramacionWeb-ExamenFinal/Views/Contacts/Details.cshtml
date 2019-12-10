@@ -1,0 +1,39 @@
+﻿@model ProgramacionWeb_ExamenFinal.Models.Contact
+
+@{
+    ViewBag.Title = "Detalles Contacto";
+    Layout = "~/Views/Shared/_Layout_navbar.cshtml";
+}
+
+<div class="mybody-content">
+
+    <h2>Detalles Contacto</h2>
+
+    <div>
+        <h4>Contacto</h4>
+        <hr />
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.name)</th>
+                <td>@Html.DisplayFor(model => model.name)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.lastname)</th>
+                <td>@Html.DisplayFor(model => model.lastname)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.idCard)</th>
+                <td>@Html.DisplayFor(model => model.idCard)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.creationDate)</th>
+                <td>@Html.DisplayFor(model => model.creationDate)</td>
+            </tr>
+        </table>
+
+    </div>
+    <p>
+        @Html.ActionLink("Editar Contacto", "Edit", new { id = Model.idContact }) |
+        @Html.ActionLink("Vover a Contactos", "Index")
+    </p>
+</div>

@@ -1,0 +1,49 @@
+﻿@model ProgramacionWeb_ExamenFinal.Models.Visit
+
+@{
+    ViewBag.Title = "Eliminar Visita";
+    Layout = "~/Views/Shared/_Layout_navbar.cshtml";
+}
+
+<div class="mybody-content">
+
+    <h2>Eliminar Visita</h2>
+
+    <h3>Esta seguro que quiere eliminar esta visita?</h3>
+    <div>
+        <h4>Visita</h4>
+        <hr />
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.date)</th>
+                <td>@Html.DisplayFor(model => model.date)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.entranceTime)</th>
+                <td> @Html.DisplayFor(model => model.entranceTime)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.departureTime)</th>
+                <td>@Html.DisplayFor(model => model.departureTime)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.fullname)</th>
+                <td>@Html.DisplayFor(model => model.fullname)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contact.name)</th>
+                <td>@Html.DisplayFor(model => model.Contact.name)</td>
+            </tr>
+        </table>
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Eliminar Visita" class="btn btn-default" /> |
+                @Html.ActionLink("Volver a Visitas", "Index")
+            </div>
+        }
+    </div>
+
+</div>

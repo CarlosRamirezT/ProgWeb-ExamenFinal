@@ -1,0 +1,44 @@
+﻿@model ProgramacionWeb_ExamenFinal.Models.Visit
+
+@{
+    ViewBag.Title = "Detalles Visita";
+    Layout = "~/Views/Shared/_Layout_navbar.cshtml";
+}
+
+<div class="mybody-content">
+
+    <h2>Detalles Visita</h2>
+
+    <div>
+        <h4>Visita</h4>
+        <hr />
+        <table>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.date)</th>
+                <td>@Html.DisplayFor(model => model.date)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.entranceTime)</th>
+                <td> @Html.DisplayFor(model => model.entranceTime)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.departureTime)</th>
+                <td>@Html.DisplayFor(model => model.departureTime)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.fullname)</th>
+                <td>@Html.DisplayFor(model => model.fullname)</td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Contact.name)</th>
+                <td>@Html.DisplayFor(model => model.Contact.name)</td>
+            </tr>
+        </table>
+
+    </div>
+    <p>
+        @Html.ActionLink("Editar Visita", "Edit", new { id = Model.idVisit }) |
+        @Html.ActionLink("Volver a Visitas", "Index")
+    </p>
+
+</div>
